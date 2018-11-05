@@ -1,0 +1,19 @@
+body {
+  display: block;
+}
+img {
+  width: 50%;
+  object-fit: fill;
+}
+
+header {
+  color: #4C5AB2FF;
+}
+
+li {
+  list-style: none;
+}
+
+.bunny {
+
+}
