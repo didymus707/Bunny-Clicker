@@ -1,6 +1,9 @@
 body {
-  display: block;
+  display: flex;
+  justify-content: space-around;
+  background-color: #FFFEFF;
 }
+
 img {
   width: 50%;
   object-fit: fill;
@@ -14,6 +17,10 @@ li {
   list-style: none;
 }
 
-.bunny {
+.list-h1 {
+	font-size: xx-large;
+}
 
+aside {
+	background-color: #f9f9f9;
 }
