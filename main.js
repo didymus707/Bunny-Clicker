@@ -1,41 +1,64 @@
-$(function() {
+(function() {
+
+	// data 
 	const model = [
 		{
-			name: 'Bunny',
-			img: 'images/bunny.jpg',
-			count: ''
+			name: 'Andreas',
+			image: 'images/andreas.jpg',
+			count: 0
+		},
+		{
+			name: 'Arrow',
+			image: 'images/arrow.jpg',
+			count: 0
+		},
+		{
+			name: 'Brian',
+			image: 'images/brian.jpg',
+			count: 0
+		},
+		{
+			name: 'Bruno',
+			image: 'images/bruno.jpg',
+			count: 0
+		},
+		{
+			name: 'Carter',
+			image: 'images/arter.jpg',
+			count: 0
+		},
+		{
+			name: 'Ryan',
+			image: 'images/ryan.jpg',
+			count: 0
+		},
+		{
+			name: 'Scott',
+			image: 'images/scott.jpg',
+			count: 0
 		}
-
-		// {
-		// 	name: 'Cute Merl',
-		// 	img: 'images/cute mer.jpg',
-		// 	count: ''
-		// },
 	];
-
+	
 	const octopus = {
-		init: function(num) {
-			const thisRab = model[num];
-			const andreas = document.querySelector('.andreas')
-			andreas.addEventListener('click', function(thisRab) {
-				return function() {
-					view.render(thisRab);
-				};
-			})
-		}
-	};
-
-	const view = {
-		render: function(rabbit) {
-			const subBody = document.querySelector('.sub-body');
-			subBody.innerHTML = `
-			<figure class="bunny-figure">
-	            <img src="images/bunny.jpg" alt="Bunny eating grass">
-	            <figcaption>Andreas</figcaption> 
-	            <h5 class="counter">clicked: <span class="count"></span></h5>
-          	</figure>`;
-			octopus.init();
+		init: ()=> {
+			const target = document.querySelector('.bun-list');
+			target.addEventListener('click', function(evt) {
+				console.log(evt);
+			});
+			// tv.render(model[0]);
 		}
 	}
-}());
 
+	const tv = {
+		render: (cat)=> {
+			const display = document.querySelector('.sub-body');
+			display.innerHTML = `
+			<figure class="bunny-figure">
+            	<img src=${cat.image} alt="Bunny eating grass">
+            	<figcaption>${cat.name}</figcaption> 
+            	<h5 class="counter">clicked: <span class="count">${cat.count}</span></h5>
+          	</figure>`;
+		}
+	}
+	octopus.init();
+})();

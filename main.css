@@ -1,8 +1,9 @@
-body {
+/*body {
   display: flex;
   justify-content: space-around;
   background-color: #FFFEFF;
-}
+  align-items: baseline;
+}*/
 
 img {
   width: 50%;
@@ -23,4 +24,10 @@ li {
 
 aside {
 	background-color: #f9f9f9;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  
 }
