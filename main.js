@@ -62,8 +62,8 @@
 				}
 				select(text);
 			});
-			// tv.init();
-			octopus.clickedRab();
+			tv.init();
+			// octopus.clickedRab();
 		},
 
 		clickedRab: () => {
@@ -82,10 +82,11 @@
 
 	const tv = {
 		display: document.querySelector('.sub-body'),
-		
-		// init: ()=> {
-		// 	tv.display.addEventListener('click', octopus.clickedRab(evt));
-		// },
+
+		init: ()=> {
+			// tv.display.addEventListener('click', octopus.clickedRab(evt));
+			octopus.clickedRab();
+		},
 
 		render: (cat)=> {
 			tv.display.innerHTML = `
