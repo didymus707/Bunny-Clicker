@@ -2,13 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
-  /* background-image: url(../images/img1.jpg); */
+  font-family: 'Roboto',
+  sans-serif;
+  /* background-color: #dedede; */
+  color: #333;
 }
 
 section {
   display: grid;
-  grid-template-columns: 250px auto;
+  grid-template-columns: 300px auto;
   grid-template-rows: 100vh;
   grid-gap: 5px;
   background-color: #e2dedec5;
@@ -21,15 +23,21 @@ aside {
 }
 
 main {
-  background-color: #eef1f5;
+  background-color: #f4fffc;
   text-align: center;
   padding-top: 50px; 
+  border: solid 50px #cacac3;
+  box-shadow: inset 11px 9px 18px 2px #999696;
+  }
+
+.bun-list {
+  margin-top: 20px;
 }
 
 .bun-list>li {
   list-style-type: none;
   cursor: pointer;
-  padding-top: 2em;
+  padding: 10px;
 }
 
 .bun-list>li:hover {
@@ -41,24 +49,33 @@ main {
   padding-top: 1em;
 }
 
+.body {
+  margin-top: 20px;
+}
+
 figure {
   border: thin #c0c0c0 solid;
   display: flex;
   flex-flow: column;
-  padding: 5px;
-  max-width: 220px;
+  padding: 10px;
+  max-width: 350px;
   margin: auto;
 }
 
 img {
-  max-width: 220px;
-  max-height: 150px;
+  max-width: 350px;
+  max-height: 300px;
+  /* object-fit: fill; */
 }
 
 figcaption {
   background-color: #222;
   color: #fff;
-  font: italic smaller sans-serif;
+  font: italic medium sans-serif;
   padding: 3px;
   text-align: center;
+}
+
+.counter {
+  width: 95.2%;
 }

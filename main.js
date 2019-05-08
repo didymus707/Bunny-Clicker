@@ -6,43 +6,50 @@
 			name: 'Andreas',
 			image: 'images/andreas.jpg',
 			alt: 'Andreas eating grass',
-			count: 0
+			count: 0,
+			selected: false
 		},
 		{
 			name: 'Arrow',
 			image: 'images/arrow.jpg',
 			alt: 'Arrow playing ball',
-			count: 0
+			count: 0,
+			selected: false
 		},
 		{
 			name: 'Brian',
 			image: 'images/brian.jpg',
 			alt: 'Brian playing in the field',
-			count: 0
+			count: 0,
+			selected: false
 		},
 		{
 			name: 'Bruno',
 			image: 'images/bruno.jpg',
 			alt: 'Bruno with a cabbage cap',
-			count: 0
+			count: 0,
+			selected: false
 		},
 		{
 			name: 'Carter',
 			image: 'images/carter.jpg',
 			alt: 'Carter eating',
-			count: 0
+			count: 0,
+			selected: false
 		},
 		{
 			name: 'Ryan',
 			image: 'images/ryan.jpg',
 			alt: 'Ryan being cute',
-			count: 0
+			count: 0,
+			selected: false
 		},
 		{
 			name: 'Scott',
 			image: 'images/scott.jpg',
 			alt: 'Scott being cute',
-			count: 0
+			count: 0,
+			selected: false
 		}
 	];
 	
@@ -102,5 +109,5 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 	const display = document.querySelector('.sub-body');
-	display.innerHTML = `<p>Click on any of the items on your left to see the images and details of those list items`;
+	display.innerHTML = `<p>Click on any of the items on your left to see the images and details of those list items</p> <br> <p>Click on the display area also to increase the number of times the display area was clicked</p>`;
 });
