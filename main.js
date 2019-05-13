@@ -54,23 +54,39 @@
 	];
 	
 	const octopus = {
-		// selRabbit: (rab) => {
-		// 	const result = model.find(rabbit => rabbit.name === rab);
-		// 	tv.render(result);
-		// },
+		target: document.querySelector('.bun-list'),
 
 		init: ()=> {
-			const target = document.querySelector('.bun-list');
-			target.addEventListener('click', (evt)=> {
+			tv.init();
+			listView.init();
+			listView.render(model);
+		},
+
+		currentRab: ()=> {
+			octopus.target.addEventListener('click', (evt) => {
 				const text = evt.target.textContent;
+				const listPath = evt.path[1].children;
+				const listSel = evt.target;
+				// console.log(listPath);
 				const select = (rab) => {
 					const result = model.find(rabbit => rabbit.name === rab);
+					result.selected = true;
+					listSel.classList.add('current');
+					// console.log(listPath);
+					// listSelect();
 					tv.render(result);
 				}
 				select(text);
+				const listSelect = () => {
+					for (const list of listPath) {
+						if (list.classList.contains('current')) {
+							list.classList.remove('current');
+							listSel.classList.add('current');							
+						}
+					}
+				}
+				listSelect();
 			});
-			tv.init();
-			// octopus.clickedRab();
 		},
 
 		clickedRab: () => {
@@ -91,18 +107,33 @@
 		display: document.querySelector('.sub-body'),
 
 		init: ()=> {
-			// tv.display.addEventListener('click', octopus.clickedRab(evt));
 			octopus.clickedRab();
 		},
 
-		render: (cat)=> {
+		render: (rab)=> {
 			tv.display.innerHTML = `
 			<figure class="bunny-figure">
-            	<img src=${cat.image} alt=${cat.alt}>
-            	<figcaption>${cat.name}</figcaption> 
-            	<h5 class="counter">Number of times clicked: <span class="count">${cat.count}</span></h5>
+            	<img src=${rab.image} alt=${rab.alt}>
+            	<figcaption>${rab.name}</figcaption> 
+            	<h5 class="counter">Number of times clicked: <span class="count">${rab.count}</span></h5>
           	</figure>`;
 		}
+	}
+
+	const listView = {
+		display: document.querySelector('.bun-list'),
+
+		init: ()=> {
+			octopus.currentRab();
+		},
+
+		render: (rabs)=> {
+			listView.display.innerHTML = "";
+			rabs.forEach(el => {
+				listView.display.innerHTML += `<li>${el.name}</li>`
+			});
+		}
+		// listView.render(model);
 	}
 	octopus.init();
 })();

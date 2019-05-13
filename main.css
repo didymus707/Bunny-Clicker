@@ -2,8 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto',
-  sans-serif;
+  font-family: 'Gaegu', cursive;
   /* background-color: #dedede; */
   color: #333;
 }
@@ -28,21 +27,31 @@ main {
   padding-top: 50px; 
   border: solid 50px #cacac3;
   box-shadow: inset 11px 9px 18px 2px #999696;
-  }
+}
+
+.list-h1 {
+  font-family: 'Gaegu', cursive;
+}
 
 .bun-list {
   margin-top: 20px;
 }
 
 .bun-list>li {
+  font-family: 'Gaegu', cursive;
   list-style-type: none;
   cursor: pointer;
   padding: 10px;
 }
 
 .bun-list>li:hover {
-  background: #308f82;
+  background: #61c4b6;
+}
 
+.current {
+  background-color: #308f82;
+  color: #fff;
+  font-weight: 600;
 }
 
 .sub-body, figcaption, .counter {
@@ -52,6 +61,11 @@ main {
 .body {
   margin-top: 20px;
 }
+
+.bunny-clicker h1 {
+  font-family: 'Gaegu', cursive;
+}
+
 
 figure {
   border: thin #c0c0c0 solid;
