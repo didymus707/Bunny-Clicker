@@ -51,7 +51,6 @@ main {
 .current {
   background-color: #308f82;
   color: #fff;
-  font-weight: 600;
 }
 
 .sub-body, figcaption, .counter {
@@ -92,4 +91,70 @@ figcaption {
 
 .counter {
   width: 95.2%;
+}
+
+.admin-cont {
+  max-width: 350px;
+  margin: 5px auto 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rab-info {
+  border: thin #c0c0c0 solid;
+  padding: 5px;
+}
+
+.admin-btn {
+  padding: 5px;
+  background-color: rgb(79, 79, 252);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+}
+
+.admin-btn:active {
+  background: #838fff;
+}
+
+.formElement {
+  border: thin #c0c0c0 solid;
+  width: 350px;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 80px 200px;
+  grid-template-rows: repeat(4, 30px);
+  grid-row-gap: 5px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#330e0e;
+}
+
+.formElement>label{
+  color: #ffffff;
+}
+
+.cta {
+  display: flex;
+  justify-content: space-between;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.close {
+  background-color: #d42a2a;
+  width: 70px;
+  padding: 5px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.okay {
+  background-color: green;
+  width: 50px;
+  padding: 5px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
 }

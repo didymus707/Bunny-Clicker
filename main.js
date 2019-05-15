@@ -67,16 +67,17 @@
 				const text = evt.target.textContent;
 				const listPath = evt.path[1].children;
 				const listSel = evt.target;
-				// console.log(listPath);
+				
+				// matching the item selected with the right details
 				const select = (rab) => {
 					const result = model.find(rabbit => rabbit.name === rab);
 					result.selected = true;
 					listSel.classList.add('current');
-					// console.log(listPath);
-					// listSelect();
 					tv.render(result);
 				}
 				select(text);
+
+				// setting up selection for current element
 				const listSelect = () => {
 					for (const list of listPath) {
 						if (list.classList.contains('current')) {
@@ -89,6 +90,7 @@
 			});
 		},
 
+		// setting the count increment and display function
 		clickedRab: () => {
 			const display = document.querySelector('.sub-body');
 			display.addEventListener('click', (evt)=> {
@@ -140,5 +142,5 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 	const display = document.querySelector('.sub-body');
-	display.innerHTML = `<p>Click on any of the items on your left to see the images and details of those list items</p> <br> <p>Click on the display area also to increase the number of times the display area was clicked</p>`;
+	display.innerHTML = `<p>Click on any of the items on your left to see the images and details of those list items</p><br><p>Click on the display area also to increase the number of times the display area was clicked</p><br><p>Click on the info area to change anything, both in the list and the display area</p>`;
 });
