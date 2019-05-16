@@ -55,6 +55,12 @@
 	
 	const octopus = {
 		target: document.querySelector('.bun-list'),
+		nameVal: document.querySelector('#name'),
+		imgVal: document.querySelector('#image'),
+		altVal: document.querySelector('#alt'),
+		clickVal: document.querySelector('#clicks'),
+		okay: document.querySelector('.okay'),
+
 
 		init: ()=> {
 			tv.init();
@@ -62,7 +68,7 @@
 			listView.render(model);
 		},
 
-		currentRab: ()=> {
+		currentRab: () => {
 			octopus.target.addEventListener('click', (evt) => {
 				const text = evt.target.textContent;
 				const listPath = evt.path[1].children;
@@ -77,7 +83,7 @@
 				}
 				select(text);
 
-				// setting up selection for current element
+				// setting up selection for current rabbit
 				const listSelect = () => {
 					for (const list of listPath) {
 						if (list.classList.contains('current')) {
@@ -107,9 +113,20 @@
 
 	const tv = {
 		display: document.querySelector('.sub-body'),
+		adminBtn: document.querySelector('.admin-btn'),
+		hiddenEle: document.querySelectorAll('.hidden'),
+		closeBtn: document.querySelector('.close'),
+		nameVal: document.querySelector('#name'),
+		imgVal: document.querySelector('#image'),
+		altVal: document.querySelector('#alt'),
+		clickVal: document.querySelector('#clicks'),
+		okay: document.querySelector('.okay'),
 
 		init: ()=> {
 			octopus.clickedRab();
+			tv.adminBtn.addEventListener('click', tv.showDet);
+			tv.closeBtn.addEventListener('click', tv.showDet);
+			// tv.okay.addEventListener('click', octopus.updateNewRab);
 		},
 
 		render: (rab)=> {
@@ -118,7 +135,21 @@
             	<img src=${rab.image} alt=${rab.alt}>
             	<figcaption>${rab.name}</figcaption> 
             	<h5 class="counter">Number of times clicked: <span class="count">${rab.count}</span></h5>
-          	</figure>`;
+			  </figure>`;
+			  tv.rabbitDetails(rab);
+		},
+
+		showDet: ()=> {
+			for (const newEl of tv.hiddenEle) {
+				newEl.classList.toggle('hidden');			
+			}
+		},
+
+		rabbitDetails: (rab)=> {
+			tv.nameVal.value = rab.name;
+			tv.imgVal.value = rab.image;
+			tv.altVal.value = rab.alt;
+			tv.clickVal.value = rab.count;
 		}
 	}
 
@@ -138,6 +169,12 @@
 		// listView.render(model);
 	}
 	octopus.init();
+
+	const nameVal = document.querySelector('#name');
+	const imgVal = document.querySelector('#image');
+	const altVal = document.querySelector('#alt');
+	const clickVal = document.querySelector('#clicks');
+	const okay = document.querySelector('.okay');
 })();
 
 document.addEventListener('DOMContentLoaded', function () {

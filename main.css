@@ -24,8 +24,8 @@ aside {
 main {
   background-color: #f4fffc;
   text-align: center;
-  padding-top: 50px; 
-  border: solid 50px #cacac3;
+  padding-top: 30px; 
+  border: solid 30px #cacac3;
   box-shadow: inset 11px 9px 18px 2px #999696;
 }
 
@@ -95,7 +95,7 @@ figcaption {
 
 .admin-cont {
   max-width: 350px;
-  margin: 5px auto 0;
+  margin: 2px auto 0;
   display: flex;
   justify-content: space-between;
 }
@@ -141,6 +141,7 @@ figcaption {
   max-width: 350px;
   margin: 0 auto;
 }
+
 .close {
   background-color: #d42a2a;
   width: 70px;
@@ -157,4 +158,16 @@ figcaption {
   border: none;
   color: #ffffff;
   cursor: pointer;
+}
+
+.close:active {
+  background: #df4e4e;
+}
+
+.okay:active {
+  background: #39b339;
+}
+
+.hidden {
+  display: none;
 }
