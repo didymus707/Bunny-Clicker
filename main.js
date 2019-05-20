@@ -54,13 +54,8 @@
 	];
 	
 	const octopus = {
-		target: document.querySelector('.bun-list'),
-		nameVal: document.querySelector('#name'),
-		imgVal: document.querySelector('#image'),
-		altVal: document.querySelector('#alt'),
-		clickVal: document.querySelector('#clicks'),
-		okay: document.querySelector('.okay'),
-
+		// target: document.querySelector('.bun-list'),
+		selBunny: model[0],
 
 		init: ()=> {
 			tv.init();
@@ -69,7 +64,8 @@
 		},
 
 		currentRab: () => {
-			octopus.target.addEventListener('click', (evt) => {
+			const target = document.querySelector('.bun-list');
+			target.addEventListener('click', (evt) => {
 				const text = evt.target.textContent;
 				const listPath = evt.path[1].children;
 				const listSel = evt.target;
@@ -77,7 +73,7 @@
 				// matching the item selected with the right details
 				const select = (rab) => {
 					const result = model.find(rabbit => rabbit.name === rab);
-					result.selected = true;
+					// result.selected = true;
 					listSel.classList.add('current');
 					tv.render(result);
 				}
@@ -108,6 +104,15 @@
 				}
 				imgSel(spanCount);
 			});
+		},
+
+		updateNewRab: (name, img, text, count)=> {
+			octopus.selBunny.name = name;
+			octopus.selBunny.img = img;
+			octopus.selBunny.alt = text;
+			octopus.selBunny.count = count;
+			tv.render(octopus.selBunny);
+			listView.render(model);
 		}
 	}
 
@@ -119,14 +124,18 @@
 		nameVal: document.querySelector('#name'),
 		imgVal: document.querySelector('#image'),
 		altVal: document.querySelector('#alt'),
-		clickVal: document.querySelector('#clicks'),
+		counts: document.querySelector('#clicks'),
 		okay: document.querySelector('.okay'),
 
 		init: ()=> {
 			octopus.clickedRab();
 			tv.adminBtn.addEventListener('click', tv.showDet);
 			tv.closeBtn.addEventListener('click', tv.showDet);
-			// tv.okay.addEventListener('click', octopus.updateNewRab);
+			tv.okay.addEventListener('click', (evt)=> {
+				evt.preventDefault();
+				octopus.updateNewRab(tv.nameVal.value, tv.imgVal.value, tv.altVal.value, tv.counts.value);
+			});
+			// octopus.updateNewRab(tv.nameVal.value, tv.imgVal.value, tv.altVal.value, tv.clickVal.value);
 		},
 
 		render: (rab)=> {
@@ -149,7 +158,7 @@
 			tv.nameVal.value = rab.name;
 			tv.imgVal.value = rab.image;
 			tv.altVal.value = rab.alt;
-			tv.clickVal.value = rab.count;
+			tv.counts.value = rab.count;
 		}
 	}
 
@@ -170,11 +179,11 @@
 	}
 	octopus.init();
 
-	const nameVal = document.querySelector('#name');
-	const imgVal = document.querySelector('#image');
-	const altVal = document.querySelector('#alt');
-	const clickVal = document.querySelector('#clicks');
-	const okay = document.querySelector('.okay');
+	// const nameVal = document.querySelector('#name');
+	// const imgVal = document.querySelector('#image');
+	// const altVal = document.querySelector('#alt');
+	// const counts = document.querySelector('#clicks');
+	// const okay = document.querySelector('.okay');
 })();
 
 document.addEventListener('DOMContentLoaded', function () {
